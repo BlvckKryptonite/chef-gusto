@@ -2,9 +2,10 @@ import ReactMarkdown from "react-markdown";
 
 interface RecipeDisplayProps {
   recipe: string;
+  image?: string;
 }
 
-export default function RecipeDisplay({ recipe }: RecipeDisplayProps) {
+export default function RecipeDisplay({ recipe, image }: RecipeDisplayProps) {
   return (
     <section 
       className="mt-8 p-8 rounded-xl bg-card border border-border shadow-xl space-y-4 animate-in fade-in-50 slide-in-from-bottom-4 duration-500"
@@ -16,6 +17,16 @@ export default function RecipeDisplay({ recipe }: RecipeDisplayProps) {
           Chef Gusto Recommends:
         </h2>
       </div>
+
+      {image && (
+        <div className="mb-6 rounded-lg overflow-hidden">
+          <img 
+            src={image} 
+            alt="Generated dish" 
+            className="w-full h-64 object-cover"
+          />
+        </div>
+      )}
       
       <div className="prose prose-invert prose-orange max-w-none">
         <ReactMarkdown

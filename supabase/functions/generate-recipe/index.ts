@@ -75,8 +75,42 @@ serve(async (req) => {
       throw new Error("No recipe content in response");
     }
 
+    // Extract recipe title for image generation
+    const titleMatch = recipe.match(/#+\s*(.+)/);
+    const recipeTitle = titleMatch ? titleMatch[1].trim() : "delicious dish";
+
+    // Generate image for the recipe
+    let imageUrl = "";
+    try {
+      const imageResponse = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${LOVABLE_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: "google/gemini-2.5-flash-image-preview",
+          messages: [
+            {
+              role: "user",
+              content: `Generate a beautiful, appetizing photo of ${recipeTitle}. Professional food photography style, well-lit, garnished, plated elegantly.`
+            }
+          ],
+          modalities: ["image", "text"]
+        }),
+      });
+
+      if (imageResponse.ok) {
+        const imageData = await imageResponse.json();
+        imageUrl = imageData.choices?.[0]?.message?.images?.[0]?.image_url?.url || "";
+      }
+    } catch (imageError) {
+      console.error("Image generation failed:", imageError);
+      // Continue without image if generation fails
+    }
+
     return new Response(
-      JSON.stringify({ recipe }),
+      JSON.stringify({ recipe, image: imageUrl }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (error) {

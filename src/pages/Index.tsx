@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import Header from "@/components/Header";
 import IngredientsList from "@/components/IngredientsList";
 import RecipeDisplay from "@/components/RecipeDisplay";
+import LoadingAnimation from "@/components/LoadingAnimation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
@@ -17,6 +18,7 @@ const Index = () => {
     "pasta",
   ]);
   const [recipe, setRecipe] = useState("");
+  const [recipeImage, setRecipeImage] = useState("");
   const [newIngredient, setNewIngredient] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const recipeSection = useRef<HTMLDivElement>(null);
@@ -44,6 +46,7 @@ const Index = () => {
 
       if (data?.recipe) {
         setRecipe(data.recipe);
+        setRecipeImage(data.image || "");
         toast.success("Recipe ready! Bon appétit!");
       } else {
         throw new Error("No recipe received");
@@ -103,8 +106,11 @@ const Index = () => {
             />
           )}
 
+          {/* Loading Animation */}
+          {isLoading && <LoadingAnimation />}
+
           {/* Recipe Display */}
-          {recipe && <RecipeDisplay recipe={recipe} />}
+          {recipe && <RecipeDisplay recipe={recipe} image={recipeImage} />}
         </div>
       </main>
     </div>

@@ -47,6 +47,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        gusto: {
+          orange: "hsl(var(--gusto-orange))",
+          "orange-light": "hsl(var(--gusto-orange-light))",
+          dark: "hsl(var(--gusto-dark))",
+          darker: "hsl(var(--gusto-darker))",
+          card: "hsl(var(--gusto-card))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

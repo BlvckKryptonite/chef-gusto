@@ -43,13 +43,13 @@ export default function RecipeDisplay({ recipe, image }: RecipeDisplayProps) {
         <ReactMarkdown
           components={{
             h1: ({ children }) => (
-              <h1 className="text-3xl font-bold text-foreground mb-4 mt-8">{children}</h1>
+              <h1 className="text-3xl font-bold text-foreground mb-4 mt-8 pb-3 border-b border-border/40">{children}</h1>
             ),
             h2: ({ children }) => (
-              <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">{children}</h2>
+              <h2 className="text-2xl font-semibold text-primary mt-8 mb-4 pb-2 border-b border-primary/20">{children}</h2>
             ),
             h3: ({ children }) => (
-              <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">{children}</h3>
+              <h3 className="text-xl font-semibold text-primary/90 mt-6 mb-3">{children}</h3>
             ),
             p: ({ children }) => (
               <p className="text-muted-foreground leading-7 mb-4">{children}</p>

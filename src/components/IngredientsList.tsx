@@ -29,14 +29,16 @@ const IngredientsList = forwardRef<HTMLDivElement, IngredientsListProps>(
 
     return (
       <section className="space-y-6">
-        <div>
-          <h2 className="text-2xl font-semibold mb-4 text-foreground">
-            Ingredients on hand:
-          </h2>
-          <ul className="space-y-1 mb-8" aria-live="polite">
-            {ingredientsListItems}
-          </ul>
-        </div>
+        {ingredients.length > 0 && (
+          <div>
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">
+              Ingredients on hand:
+            </h2>
+            <ul className="space-y-1 mb-8" aria-live="polite">
+              {ingredientsListItems}
+            </ul>
+          </div>
+        )}
 
         {ingredients.length > 3 && (
           <div 

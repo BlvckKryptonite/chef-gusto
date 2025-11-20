@@ -73,6 +73,18 @@ const Index = () => {
       
       <main className="max-w-4xl mx-auto px-6 py-10">
         <div className="space-y-8">
+          {/* Guidance Text */}
+          {ingredients.length === 0 && (
+            <div className="text-center py-6">
+              <h2 className="text-2xl font-semibold text-foreground mb-2">
+                Please add at least four ingredients to get your recipe.
+              </h2>
+              <p className="text-muted-foreground">
+                Start by adding ingredients you have on hand below.
+              </p>
+            </div>
+          )}
+
           {/* Add Ingredient Form */}
           <form 
             onSubmit={addIngredient} 

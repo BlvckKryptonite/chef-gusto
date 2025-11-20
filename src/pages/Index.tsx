@@ -10,13 +10,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Plus } from "lucide-react";
 
 const Index = () => {
-  const [ingredients, setIngredients] = useState<string[]>([
-    "chicken",
-    "garlic",
-    "olive oil",
-    "tomatoes",
-    "pasta",
-  ]);
+  const [ingredients, setIngredients] = useState<string[]>([]);
   const [recipe, setRecipe] = useState("");
   const [recipeImage, setRecipeImage] = useState("");
   const [newIngredient, setNewIngredient] = useState("");
@@ -68,6 +62,11 @@ const Index = () => {
     }
   }
 
+  function removeIngredient(index: number) {
+    setIngredients((prev) => prev.filter((_, i) => i !== index));
+    toast.success("Ingredient removed");
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -102,6 +101,7 @@ const Index = () => {
               ref={recipeSection}
               ingredients={ingredients}
               getRecipe={getRecipe}
+              removeIngredient={removeIngredient}
               isLoading={isLoading}
             />
           )}

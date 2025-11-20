@@ -1,21 +1,29 @@
 import { forwardRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ChefHat } from "lucide-react";
+import { ChefHat, X } from "lucide-react";
 
 interface IngredientsListProps {
   ingredients: string[];
   getRecipe: () => void;
+  removeIngredient: (index: number) => void;
   isLoading?: boolean;
 }
 
 const IngredientsList = forwardRef<HTMLDivElement, IngredientsListProps>(
-  ({ ingredients, getRecipe, isLoading }, ref) => {
+  ({ ingredients, getRecipe, removeIngredient, isLoading }, ref) => {
     const ingredientsListItems = ingredients.map((ingredient, index) => (
       <li 
         key={`${ingredient}-${index}`} 
-        className="text-muted-foreground leading-7 pl-6 relative before:content-['•'] before:absolute before:left-2 before:text-primary"
+        className="text-muted-foreground leading-7 pl-6 pr-8 relative before:content-['•'] before:absolute before:left-2 before:text-primary group"
       >
         {ingredient}
+        <button
+          onClick={() => removeIngredient(index)}
+          className="absolute right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-muted-foreground hover:text-destructive"
+          aria-label={`Remove ${ingredient}`}
+        >
+          <X className="w-4 h-4" />
+        </button>
       </li>
     ));
 

@@ -6,11 +6,12 @@ interface IngredientsListProps {
   ingredients: string[];
   getRecipe: () => void;
   removeIngredient: (index: number) => void;
+  clearAllIngredients: () => void;
   isLoading?: boolean;
 }
 
 const IngredientsList = forwardRef<HTMLDivElement, IngredientsListProps>(
-  ({ ingredients, getRecipe, removeIngredient, isLoading }, ref) => {
+  ({ ingredients, getRecipe, removeIngredient, clearAllIngredients, isLoading }, ref) => {
     const ingredientsListItems = ingredients.map((ingredient, index) => (
       <li 
         key={`${ingredient}-${index}`} 
@@ -34,9 +35,18 @@ const IngredientsList = forwardRef<HTMLDivElement, IngredientsListProps>(
             <h2 className="text-2xl font-semibold mb-4 text-foreground">
               Ingredients on hand:
             </h2>
-            <ul className="space-y-1 mb-8" aria-live="polite">
+            <ul className="space-y-1 mb-4" aria-live="polite">
               {ingredientsListItems}
             </ul>
+            <div className="flex justify-center mb-8">
+              <Button
+                variant="ghost"
+                onClick={clearAllIngredients}
+                className="text-muted-foreground hover:text-destructive text-sm"
+              >
+                Clear all ingredients
+              </Button>
+            </div>
           </div>
         )}
 

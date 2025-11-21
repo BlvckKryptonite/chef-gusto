@@ -42,7 +42,7 @@ const IngredientsList = forwardRef<HTMLDivElement, IngredientsListProps>(
               <Button
                 variant="ghost"
                 onClick={clearAllIngredients}
-                className="text-muted-foreground hover:text-destructive text-sm"
+                className="text-muted-foreground hover:text-secondary text-sm"
               >
                 Clear all ingredients
               </Button>

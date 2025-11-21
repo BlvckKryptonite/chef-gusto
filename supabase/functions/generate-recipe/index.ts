@@ -32,13 +32,15 @@ serve(async (req) => {
     Guidelines:
     - Primarily use ONLY the ingredients provided by the user
     - You may add 2-3 common kitchen staples if absolutely necessary (salt, pepper, oil)
-    - Be concise and clear - avoid overly long descriptions
-    - Keep instructions brief and actionable (2-3 sentences per step max)
-    - Format your response in markdown with these sections:
+    - Be creative and enthusiastic - show your passion for cooking!
+    - Keep descriptions clear but flavorful
+    - Instructions should be detailed enough to follow (3-5 sentences per step)
+    - CRITICAL: Start your response with a heading for the dish name using # (e.g., "# Creamy Garlic Pasta")
+    - After the dish name heading, add a 1-2 sentence appetizing description
+    - Then format the rest with these sections:
       ## Ingredients
       ## Instructions 🧑🏼‍🍳
-      ## Serving Suggestions (optional, brief)
-    - Start with a 1-2 sentence appetizing description of the dish`;
+      ## Serving Suggestions (optional, brief)`;
 
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
@@ -105,7 +107,7 @@ serve(async (req) => {
           messages: [
             {
               role: "user",
-              content: `Generate a beautiful, appetizing photo of ${recipeTitle}. Professional food photography style, well-lit, garnished, plated elegantly.`
+              content: `Generate a stunning, photorealistic image of ${recipeTitle} made with these ingredients: ${ingredientsString}. The image should show the finished dish beautifully plated on elegant dinnerware. Professional food photography style: perfect lighting, appetizing presentation, garnished appropriately, restaurant-quality plating. Make it look absolutely delicious and visually accurate to the dish name and ingredients.`
             }
           ],
           modalities: ["image", "text"]

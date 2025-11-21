@@ -67,6 +67,13 @@ const Index = () => {
     toast.success("Ingredient removed");
   }
 
+  function clearAllIngredients() {
+    setIngredients([]);
+    setRecipe("");
+    setRecipeImage("");
+    toast.success("All ingredients cleared");
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -114,6 +121,7 @@ const Index = () => {
               ingredients={ingredients}
               getRecipe={getRecipe}
               removeIngredient={removeIngredient}
+              clearAllIngredients={clearAllIngredients}
               isLoading={isLoading}
             />
           )}

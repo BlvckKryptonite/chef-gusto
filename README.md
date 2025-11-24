@@ -1,73 +1,41 @@
-# Welcome to your Lovable project
+# 🍳 Chef Gusto — AI-Powered Recipe Generator
 
-## Project info
+A modern **TypeScript** adaptation of the original “Chef Claude” project — rebuilt with a cleaner architecture, **AI image generation**, and smarter prompt control.
 
-**URL**: https://lovable.dev/projects/e46e0acc-6679-43a9-a38d-ddc924c0e873
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## **🎯 What It Does**
+Chef Gusto is a playful, intelligent recipe assistant that takes a list of ingredients and returns:
+✅ **AI-generated recipes**
+🎨 **AI-generated dish images**
+🧠 **Structured JSON response** for clean rendering
+⚡ **TypeScript** for reliability and scalability
+🚀 **Fully deployable to Netlify**
 
-**Use Lovable**
+This version re-imagines the earlier **Chef Claude** app (JSX version) by using **TypeScript** for type-safety, improved error-handling, and a more maintainable codebase.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e46e0acc-6679-43a9-a38d-ddc924c0e873) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## **📸 Live Demo**
+(Update this after deployment)
+👉 [https://your-netlify-site.netlify.app](https://your-netlify-site.netlify.app)
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## **🧠 How It Works**
+Chef Gusto uses a **single AI completion endpoint** to generate:
+1. **Structured Recipe Instructions**
+   ```json
+   {
+     "title": "Crispy Lemon Garlic Pasta",
+     "ingredients": ["pasta", "garlic", "lemon", "olive oil"],
+     "steps": ["Boil pasta...", "..."],
+     "cookTime": "20 minutes"
+   }
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/e46e0acc-6679-43a9-a38d-ddc924c0e873) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)

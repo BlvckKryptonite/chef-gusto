@@ -12,21 +12,18 @@ A modern **TypeScript** adaptation of the original “Chef Claude” project —
 
 ## **🎯 What It Does**
 Chef Gusto is a playful, intelligent recipe assistant that takes a list of ingredients and returns:
-✅ **AI-generated recipes**
-🎨 **AI-generated dish images**
-🧠 **Structured JSON response** for clean rendering
-⚡ **TypeScript** for reliability and scalability
-🚀 **Fully deployable to Netlify**
+
+- ✅ **AI-generated recipes**
+- 🎨 **AI-generated dish images**
+- 🧠 **Structured JSON response** for clean rendering
+- ⚡ **TypeScript** for reliability and scalability
+- 🚀 **Fully deployable to Netlify**
 
 This version re-imagines the earlier **Chef Claude** app (JSX version) by using **TypeScript** for type-safety, improved error-handling, and a more maintainable codebase.
 
----
+**Live Demo**: [Get Your Recipe From Chef Gusto Here.](https://chef-gusto.netlify.app/)
 
-## **📸 Live Demo**
-(Should update this after deployment)
-👉 [https://your-netlify-site.netlify.app](https://your-netlify-site.netlify.app)
-
----
+<br>
 
 ## **🧠 How It Works**
 Chef Gusto uses a **single AI completion endpoint** to generate:
@@ -39,6 +36,8 @@ Chef Gusto uses a **single AI completion endpoint** to generate:
      "cookTime": "20 minutes"
    }
 
+<br>
+
 ## 🧩 Tech Stack
 
 | **Category** | **Tech** |
@@ -48,6 +47,8 @@ Chef Gusto uses a **single AI completion endpoint** to generate:
 | **Tooling** | 🛠 Vite<br>📦 npm<br>☁️ Netlify for deployment |
 
 ---
+
+<br>
 
 ## Project Structure
 
@@ -113,7 +114,8 @@ npm run build
 2. Drag the **dist/** folder into Netlify’s deploy panel.  
 3. Add the environment variable manually afterward.  
 
----
+
+<br>
 
 ## 🤖 Why TypeScript?
 This rewrite uses TypeScript to improve:
@@ -126,18 +128,48 @@ This rewrite uses TypeScript to improve:
 
 ---
 
-## 🔥 Why This AI Provider?
-Compared to previous versions requiring multiple APIs, this one offers:
+## ⭐ Tips on choosing an ideal AI model ⭐:
+Because this app relies on both text and image generation, it's best to use a single AI provider that offers all essential capabilities under one roof:
 
 - 🧠 Unified text + image generation  
 - ✍️ Tight control over prompt formatting  
 - 🧱 JSON-structured output  
-- ⚡ Fast completions ideal for frontend apps  
+- ⚡ Fast completions ideal for frontend apps 
+- 🔁 Simple, predictable pricing 
+
+
+This app uses **Lovable’s unified AI API** (for text + image generation) along with **Supabase** (for lightweight data persistence).  
+If you ever want to swap providers, here are reliable alternatives that offer similar capabilities:
+
+### 🔥 Recommended AI Models
+
+#### **1. OpenAI GPT-4o / GPT-4.1**
+- 🧩 Text + image generation  
+- ⚡ Very fast, frontend-friendly  
+- 📘 Strong JSON mode  
+- ✍️ Excellent prompt control  
+
+#### **2. Anthropic Claude 3.7 Sonnet**
+- 🧠 Incredible reasoning + structured output  
+- 📦 Great for long, multi-step generations  
+- ✍️ Reliable formatting consistency  
+- (Image generation requires a second provider)
+
+#### **3. Google Gemini 2.0 Flash / Pro**
+- 🖼️ Native image generation  
+- ⚡ High-speed responses  
+- 📘 Good with JSON schemas  
+- 🧩 Solid all-in-one option  
+
+#### **4. Groq LLaMA 3.1 Models (via Groq API)**
+- ⚡ Insanely fast text generation  
+- 🧠 Good reasoning for recipes/instructions  
+- ❗ No native image generation — requires pairing with another API  
 
 ---
 
 ## 🙌 Credits
-**Chef Gusto** is an adaptation of the original **Chef Claude** project, rebuilt from scratch using:
+**Chef Gusto** is an adaptation of the original [Chef Claude](https://github.com/BlvckKryptonite/chef-claude) project, rebuilt from scratch using:
 
 - TypeScript  
 - A unified AI generation system  
